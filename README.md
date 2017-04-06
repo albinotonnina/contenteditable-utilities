@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/albinotonnina/contenteditable-utilities.svg?branch=master)](https://travis-ci.org/albinotonnina/contenteditable-utilities)
 [![Coverage Status](https://coveralls.io/repos/github/albinotonnina/contenteditable-utilities/badge.svg)](https://coveralls.io/github/albinotonnina/contenteditable-utilities)
-
+[![bitHound Dependencies](https://www.bithound.io/github/albinotonnina/contenteditable-utilities/badges/dependencies.svg)](https://www.bithound.io/github/albinotonnina/contenteditable-utilities/master/dependencies/npm)
 
 Contenteditable Utilities
 =========
