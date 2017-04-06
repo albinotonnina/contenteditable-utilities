@@ -1,5 +1,5 @@
 const striptags = require('striptags');
-const insertcss = require('insert-css');
+const insertCss = require('insert-css');
 
 
 
@@ -23,10 +23,7 @@ export default class {
             this.element.classList.remove('placeholder');
         }
 
-        insertcss(
-            require('fs').readFileSync(__dirname + '/placeholder.css', 'utf8')
-        );
-
+        insertCss('.placeholder:before { content: attr(data-placeholder);position: absolute;cursor: text; }');
     }
 
     isEmpty (element) {
