@@ -7,8 +7,12 @@ export default class {
         this.element = element;
         this.options = options;
 
+        this.element.setAttribute('data-placeholder', 'Plaveholder text');
+        this.element.setAttribute('contenteditable', true);
+
         this.element.addEventListener('blur', this._onBlur.bind(this));
 
+        require('contenteditable-placeholder')(this.element)
     }
 
     _onBlur() {

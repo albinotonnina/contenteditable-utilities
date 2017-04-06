@@ -45,6 +45,7 @@
     "test": "test"
   },
   "dependencies": {
+    "contenteditable-placeholder": "^1.0.2",
     "striptags": "^3.0.1"
   }
 }
