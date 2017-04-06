@@ -117,7 +117,7 @@ describe('index', () => {
             element: dummyElement,
             options: {
                 stripTags: true,
-                placeholderText: 'Placeholder text',
+                placeholderText: 'Placeholder text'
             }
         });
 

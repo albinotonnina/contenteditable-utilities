@@ -45,7 +45,7 @@ export default class {
         this.options.onBlur.call({}, this.options.stripTags ? striptags(html) : html);
 
 
-        if (isEmpty(this.element)) {
+        if (this.isEmpty(this.element)) {
             this.element.classList.add('placeholder');
         } else {
             this.element.classList.remove('placeholder');
@@ -54,7 +54,7 @@ export default class {
 
     _onFocus() {
 
-        if (isEmpty(this.element) && document.activeElement !== this.element) {
+        if (this.isEmpty(this.element) && document.activeElement !== this.element) {
             this.element.classList.add('placeholder');
         } else {
             this.element.classList.remove('placeholder');
