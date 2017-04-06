@@ -1,5 +1,7 @@
 const striptags = require('striptags');
-//const placeholder = require('contenteditable-placeholder');
+const insertcss = require('insert-css');
+
+
 
 export default class {
 
@@ -14,22 +16,16 @@ export default class {
         this.element.addEventListener('blur', this._onBlur.bind(this));
         this.element.addEventListener('focus', this._onFocus.bind(this));
 
-        // var update = function () {
-        //
-        // };
-        //
-        // new MutationObserver(update).observe(element, { childList: true });
-        //
-        // update();
-        // dom.on(element, 'focus', update);
-        // dom.on(element, 'blur', update);
-        //
 
         if (this.isEmpty(this.element) && document.activeElement !== this.element) {
             this.element.classList.add('placeholder');
         } else {
             this.element.classList.remove('placeholder');
         }
+
+        insertcss(
+            require('fs').readFileSync(__dirname + '/placeholder.css', 'utf8')
+        );
 
     }
 
