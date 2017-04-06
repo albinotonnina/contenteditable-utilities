@@ -18,6 +18,7 @@ describe('index', () => {
     let dummyElement;
 
     const mouseBlurEvent = new window.MouseEvent('blur');
+    const mouseFocusEvent = new window.MouseEvent('focus');
 
     beforeEach(() => {
 
@@ -124,6 +125,27 @@ describe('index', () => {
 
         expect(dummyElement.getAttribute('data-placeholder')).to.equal('Placeholder text');
         expect(dummyElement.classList.contains('placeholder')).to.true;
+
+    });
+
+
+    it('should 6', () => {
+
+        dummyElement.innerHTML = '';
+
+        new ContentEditable({
+            element: dummyElement,
+            options: {
+                stripTags: true,
+                placeholderText: 'Placeholder text'
+            }
+        });
+
+        dummyElement.dispatchEvent(mouseFocusEvent);
+
+
+        expect(dummyElement.getAttribute('data-placeholder')).to.equal('Placeholder text');
+        expect(dummyElement.classList.contains('placeholder')).to.false;
 
     });
 

@@ -1,8 +1,6 @@
 const striptags = require('striptags');
 const insertCss = require('insert-css');
 
-
-
 export default class {
 
     constructor({element, options}) {
@@ -16,38 +14,27 @@ export default class {
         this.element.addEventListener('blur', this._onBlur.bind(this));
         this.element.addEventListener('focus', this._onFocus.bind(this));
 
-
-        if (this.isEmpty(this.element) && document.activeElement !== this.element) {
-            this.element.classList.add('placeholder');
-        } else {
-            this.element.classList.remove('placeholder');
-        }
+        this._updatePlaceholder();
 
         insertCss('.placeholder:before { content: attr(data-placeholder);position: absolute;cursor: text; }');
     }
 
-    isEmpty (element) {
+    isEmpty(element) {
         return element.textContent === '' && element.children.length === 0;
     }
 
     _onBlur() {
-
-
         const html = this.element.innerHTML;
-
         this.options.onBlur.call({}, this.options.stripTags ? striptags(html) : html);
-
-
-        if (this.isEmpty(this.element)) {
-            this.element.classList.add('placeholder');
-        } else {
-            this.element.classList.remove('placeholder');
-        }
+        this._updatePlaceholder();
     }
 
     _onFocus() {
+        this.element.classList.remove('placeholder');
+    }
 
-        if (this.isEmpty(this.element) && document.activeElement !== this.element) {
+    _updatePlaceholder() {
+        if (this.isEmpty(this.element)) {
             this.element.classList.add('placeholder');
         } else {
             this.element.classList.remove('placeholder');
