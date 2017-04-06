@@ -1,0 +1,50 @@
+{
+  "name": "contenteditable-utilities",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=4.1.1"
+  },
+  "description": "Formats number",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha --recursive --compilers js:babel-core/register",
+    "pretest": "npm run build",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*",
+    "build": "babel src --out-dir dist",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/albinotonnina/contenteditable-utilities.git"
+  },
+  "keywords": [
+    "contenteditable",
+    "input",
+    "text",
+    "textarea"
+  ],
+  "author": "Albino Tonnina",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.24.0",
+    "chai": "~3.0.0",
+    "coveralls": "^2.13.0",
+    "istanbul": "^0.3.17",
+    "jsdom": "^9.12.0",
+    "mocha": "~2.2.5",
+    "mocha-lcov-reporter": "^1.3.0"
+  },
+  "bugs": {
+    "url": "https://github.com/albinotonnina/contenteditable-utilities/issues"
+  },
+  "homepage": "https://github.com/albinotonnina/contenteditable-utilities",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "striptags": "^3.0.1"
+  }
+}
