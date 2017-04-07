@@ -16,6 +16,7 @@ export default class {
 
         this._updatePlaceholder();
 
+        insertCss('.placeholder { position: relative; }');
         insertCss('.placeholder:before { content: attr(data-placeholder);position: absolute;cursor: text; }');
     }
 

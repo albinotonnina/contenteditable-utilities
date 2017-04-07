@@ -5,6 +5,7 @@
 Contenteditable Utilities
 =========
 
+[codepen example](http://codepen.io/albino/pen/oZRPJK)
 
 
 ## Installation
