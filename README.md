@@ -5,6 +5,8 @@
 Contenteditable Utilities
 =========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/albinotonnina/contenteditable-utilities.svg)](https://greenkeeper.io/)
+
 [codepen example](http://codepen.io/albino/pen/oZRPJK)
 
 
